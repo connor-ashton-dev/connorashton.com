@@ -22,7 +22,7 @@ const Me = () => {
         alt='profile picture'
         width={230}
         height={230}
-        className='rounded-full p-0.5 mt-8 md:mt-52 mb-8 shadow-md shadow-gray-500 select-none'
+        className='rounded-full p-0.5 mt-8 md:mt-52 mb-8 shadow-md shadow-gray-500 select-none bg-white'
       />
     </motion.div>
   );
