@@ -14,7 +14,6 @@ const builder = imageUrlBuilder(sanityClient);
 
 export const getAboutSection = async () => {
   const posts = await sanityClient.fetch(`*[_type == "about"]`);
-  console.log(posts);
   return posts;
 };
 

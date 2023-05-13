@@ -34,9 +34,12 @@ export default async function About() {
         />
       </div>
       {/* About Section */}
-      <div className=' md:w-[40%] mb-2'>
+      <div className='w-screen md:w-[40%] mb-2'>
         {posts.map((post: PostType, idx: number) => (
-          <p key={idx} className='text-2xl font-semibold mb-4 bg-white'>
+          <p
+            key={idx}
+            className='px-4 py-1 text-2xl font-semibold mb-4 bg-white'
+          >
             {post.content}
           </p>
         ))}
