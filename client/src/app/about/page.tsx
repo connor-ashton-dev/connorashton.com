@@ -7,6 +7,7 @@ import {
   getFrontendSkillPictures,
   getMobileSkillPictures,
 } from '../utils/UseSanity';
+import Link from 'next/link';
 
 type PostType = {
   content: string;
@@ -17,23 +18,33 @@ export default async function About() {
   const backendPics = await getBackendSkillPictures();
   const mobilePics = await getMobileSkillPictures();
   return (
-    <div className='h-full w-screen flex flex-col items-center px-4'>
+    <div className='h-full w-screen flex flex-col items-center px-6'>
       <h1 className='bg-white mt-8 md:mt-52 px-4 py-3 text-3xl font-bold border-4 border-black'>
         About Me:
       </h1>
 
+      {/* Image */}
+      <div>
+        <Image
+          src='/about.jpeg'
+          alt='aboutPicture'
+          height={300}
+          width={300}
+          className='my-8 border-4 border-black'
+        />
+      </div>
       {/* About Section */}
-      <div className='mt-12 '>
+      <div className=' md:w-[40%] mb-2'>
         {posts.map((post: PostType, idx: number) => (
-          <p key={idx} className='text-2xl font-bold mb-8 text-center bg-white'>
+          <p key={idx} className='text-2xl font-semibold mb-4 bg-white'>
             {post.content}
           </p>
         ))}
       </div>
 
       {/* Skills Section */}
-      <div className='mt-12 flex flex-col items-center text-center'>
-        <h2 className='bg-white mt-4 md:mt-52 px-4 py-3 text-3xl font-bold border-4 border-black'>
+      <div className='mt-6 flex flex-col items-center text-center'>
+        <h2 className='bg-white mt-4 md:mt-12 px-4 py-3 text-3xl font-bold border-4 border-black'>
           Skills:
         </h2>
         <div className='flex flex-col space-y-8 mt-8'>
@@ -91,6 +102,13 @@ export default async function About() {
           </div>
         </div>
       </div>
+      <hr className='rounded' />
+      <Link
+        href='/'
+        className='mt-24 mb-12 bg-indigo-500 px-3 py-2 border-black border-4'
+      >
+        <p className='text-white text-xl font-bold'>Go back</p>
+      </Link>
     </div>
   );
 }
