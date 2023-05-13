@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: radial-gradient(gray 0.7px, transparent 1.2px) 0 0 / 40px 40px;
+}
