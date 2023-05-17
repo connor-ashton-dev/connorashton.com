@@ -3,6 +3,7 @@ export const revalidate = 0;
 
 import { createClient } from 'next-sanity';
 import imageUrlBuilder from '@sanity/image-url';
+import { buildFileUrl } from '@sanity/asset-utils';
 const sanityClient = createClient({
   projectId: 'g5qx3m4j',
   dataset: 'production',
@@ -47,4 +48,13 @@ export const getMobileSkillPictures = async () => {
     picsArray.push(builder.image(images[i].asset._ref).url());
   }
   return picsArray;
+};
+
+export const getResume = async (): Promise<string> => {
+  const resume = await sanityClient.fetch(`*[_type == "resume"]`);
+  console.log(resume);
+  console.log(resume[0].resume);
+  const ref = resume[0].resume.asset._ref;
+  const link = `https://cdn.sanity.io/files/g5qx3m4j/production/${ref}.pdf`;
+  return Promise.resolve(link);
 };

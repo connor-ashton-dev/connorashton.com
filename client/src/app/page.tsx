@@ -3,8 +3,15 @@ import ShadowText from './components/ShadowText';
 import { Socials } from './components/Socials';
 import ProfilePic from './components/Me';
 import AnimatedText from './components/AnimatedText';
+import { getResume } from './utils/UseSanity';
 
-export default function Home() {
+const getResumeLink = async () => {
+  const resume = await getResume();
+  return resume;
+};
+
+export default async function Home() {
+  const resume: string = await getResumeLink();
   return (
     <main className='h-full w-screen flex flex-col items-center'>
       {/* <div className='w-full px-4 pb-4 flex flex-row justify-end'> */}
@@ -17,7 +24,10 @@ export default function Home() {
       {/* </div> */}
       <ShadowText text='About' href='/about' />
       <ShadowText text='Projects' href='https://github.com/connor-ashton-dev' />
-      <ShadowText text='Resume' href='resume' />
+      <ShadowText
+        text='Resume'
+        href='https://cdn.sanity.io/files/g5qx3m4j/production/7d414d418cd80357cf581d229e73aae5b1a88d40.pdf'
+      />
     </main>
   );
 }
