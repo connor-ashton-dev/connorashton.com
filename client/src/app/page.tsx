@@ -15,8 +15,8 @@ export default function Home() {
       <AnimatedText text="Hi, I'm Connor" />
       <Socials />
       {/* </div> */}
-      <ShadowText text='About' href='about' />
-      <ShadowText text='Projects' href='projects' />
+      <ShadowText text='About' href='/about' />
+      <ShadowText text='Projects' href='https://github.com/connor-ashton-dev' />
       <ShadowText text='Resume' href='resume' />
     </main>
   );

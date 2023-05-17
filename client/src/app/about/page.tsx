@@ -19,7 +19,7 @@ export default async function About() {
   const mobilePics = await getMobileSkillPictures();
   return (
     <div className='h-full w-screen flex flex-col items-center px-6'>
-      <h1 className='bg-white mt-8 md:mt-52 px-4 py-3 text-3xl font-bold border-4 border-black'>
+      <h1 className='bg-white mt-8 md:mt-[5%] px-4 py-3 text-3xl font-bold border-4 border-black'>
         About Me:
       </h1>
 
