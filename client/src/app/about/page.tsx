@@ -38,7 +38,7 @@ export default async function About() {
         {posts.map((post: PostType, idx: number) => (
           <p
             key={idx}
-            className='px-4 py-1 text-xl md:text-2xl font-semibold mb-4 bg-white'
+            className='px-4 py-1 text-xl md:text-2xl font-medium mb-4 bg-white'
           >
             {post.content}
           </p>
