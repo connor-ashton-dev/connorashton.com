@@ -26,7 +26,7 @@ export default async function Home() {
       <ShadowText text='Projects' href='https://github.com/connor-ashton-dev' />
       <ShadowText
         text='Resume'
-        href='https://cdn.sanity.io/files/g5qx3m4j/production/7d414d418cd80357cf581d229e73aae5b1a88d40.pdf'
+        href='https://cdn.sanity.io/files/g5qx3m4j/production/1041aabc113766c0bf5ea3a7b8bebc442f44cb85.pdf'
       />
     </main>
   );
