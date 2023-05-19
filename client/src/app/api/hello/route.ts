@@ -6,8 +6,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const who = searchParams.get('requester');
   if (who) {
-    console.log(who.slice(13));
-    const formatted = who.slice(13);
+    const formatted = who.slice(3);
     client.messages
       .create({
         body: `${formatted} looked at your site`,
