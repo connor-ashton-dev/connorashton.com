@@ -52,8 +52,6 @@ export const getMobileSkillPictures = async () => {
 
 export const getResume = async (): Promise<string> => {
   const resume = await sanityClient.fetch(`*[_type == "resume"]`);
-  console.log(resume);
-  console.log(resume[0].resume);
   const ref = resume[0].resume.asset._ref;
   const link = `https://cdn.sanity.io/files/g5qx3m4j/production/${ref}.pdf`;
   return Promise.resolve(link);
