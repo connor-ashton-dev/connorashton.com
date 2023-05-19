@@ -6,10 +6,11 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const who = searchParams.get('requester');
   if (who) {
-    console.log(who.slice(8));
+    console.log(who.slice(13));
+    const formatted = who.slice(13);
     client.messages
       .create({
-        body: `${who} looked at your resume`,
+        body: `${formatted} looked at your site`,
         from: process.env.TWILIO_FROM_NUMBER,
         to: process.env.TWILIO_TO_NUMBER,
       })
