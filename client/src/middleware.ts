@@ -7,11 +7,11 @@ export async function middleware(request: NextRequest) {
     process.env.NODE_ENV == 'development'
       ? 'http://localhost:3000'
       : 'https://www.connor-ashton.com';
-  const { pathname } = request.nextUrl;
   await fetch(`${LINK}/api/hello`);
+  return NextResponse.redirect(new URL('/', request.url));
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: `/resumes/:path*`,
+  matcher: `/resume`,
 };
