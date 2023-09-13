@@ -1,13 +1,14 @@
 //revalidate every request (plz work)
 export const revalidate = 0;
+//comment
 
-import { createClient } from 'next-sanity';
-import imageUrlBuilder from '@sanity/image-url';
-import { buildFileUrl } from '@sanity/asset-utils';
+import { createClient } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url";
+import { buildFileUrl } from "@sanity/asset-utils";
 const sanityClient = createClient({
-  projectId: 'g5qx3m4j',
-  dataset: 'production',
-  apiVersion: '2023-05-12',
+  projectId: "g5qx3m4j",
+  dataset: "production",
+  apiVersion: "2023-05-12",
   useCdn: false,
 });
 
@@ -52,7 +53,6 @@ export const getMobileSkillPictures = async () => {
 
 export const getResume = async (): Promise<string> => {
   const resume = await sanityClient.fetch(`*[_type == "resume"]`);
-  const ref = resume[0].resume.asset._ref;
-  const link = `https://cdn.sanity.io/files/g5qx3m4j/production/${ref}.pdf`;
+  const link = resume[0].resume.asset.url;
   return Promise.resolve(link);
 };
